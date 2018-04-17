@@ -1,4 +1,4 @@
-<html>
+ <html>
 
 <head>
     <!-- Latest compiled and minified CSS -->
@@ -6,6 +6,9 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- AngularJS library -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -17,20 +20,21 @@
 <body ng-app="contactsApp">
     <div class="container" ng-controller="contactsCtrl">
         <h3>Contacts App</h3>
-
+        <span>{{message}}</span>
         <table class="table">
             <thead>
                 <tr>
-                    <td>Name</td>
-                    <td>Email</td>
-                    <td>Number</td>
+                    <td><b>Name</b></td>
+                    <td><b>Email</b></td>
+                    <td><b>Number</b></td>
+                    
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>{{name}}</td>
-                    <td>{{email}}</td>
-                    <td>{{number}}</td>
+                <tr ng-repeat="contact in contactList">
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>{{contact.number}}</td>
                 </tr>
             </tbody>
         </table>
